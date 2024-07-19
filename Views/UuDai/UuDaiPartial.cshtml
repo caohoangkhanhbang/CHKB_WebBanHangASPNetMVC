@@ -1,0 +1,14 @@
+﻿@model IEnumerable<WebBanHangCuaKhanhBang.Models.UuDai>
+
+
+
+@foreach (var item in Model) {
+    <div class="col l-1-3 c-4">
+        <div class="uu_dai">
+            <a href="#di_den_noi_dung_cac_sp" class="uu_dai_pt can_chinh_tp">
+                <img src="~/assets/img/icon_gioiThieu/@item.AnhUuDai" alt="@item.TenUuDai" class="icon_uu_dai">
+                <span class="chu_uu_dai kich_thuoc_chu">@item.TenUuDai</span>
+            </a>
+        </div>
+    </div>
+}

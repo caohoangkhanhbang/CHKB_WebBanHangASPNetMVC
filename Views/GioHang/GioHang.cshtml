@@ -1,0 +1,181 @@
+﻿@*@model List<WebBanHangCuaKhanhBang.Models.GioHangClass>*@
+@model List<WebBanHangCuaKhanhBang.Models.GioHang>
+@{
+    ViewBag.Title = "Trang giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutPageKhanhBangShop.cshtml";
+}
+@*Giỏ hàng*@
+<link rel="stylesheet" href="~/assets/css/giohang.css">
+
+<!-- chi tiết giỏ hàng -->
+<div class="chi_tiet_gio_hang_container">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 m-12 c-12">
+                <div class="chi_tiet_gio_hang an_thanh_phan_re">
+                    <div class="row">
+                        <div class="col l-4 m-4 c-4">
+                            <div class="chi_tiet_gio_hang_tieude_trai chu_gio_hang dem_trai_thanh_phan_giohang can_deu_chieu_cao">
+                                <div class="san_pham">Sản phẩm</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-8 m-8 c-8">
+                            <div class="chi_tiet_gio_hang_tieude_phai">
+                                <div class="row">
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Đơn Giá</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Số Lượng</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Số Tiền</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Thao Tác</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <!-- tên sản phẩm trong giỏ hàng -->
+            <div class="row dem_them_ben_duoi_2px">
+                <div class="col l-12 m-12 c-12">
+                    <div class="ten_nha_xuat_ban">
+                        <div class="chi_tiet_gio_hang_tieude_trai chu_gio_hang dem_trai_thanh_phan_giohang can_deu_chieu_cao">
+                            <div class="san_pham">Nhà sách CHKB</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l-12 m-12 c-12">
+                    <div class="chi_tiet_gio_hang_thongso">
+                        <div class="row">
+                            <div class="col l-4 m-12 c-12">
+                                <a href="/sanpham/chitietsanphamview?id=@item.MaSanPham" class="chi_tiet_gio_hang_thongso_hinh">
+                                    <input class="quyet_dinh_dathang" type="checkbox" name="xoa" id="dat_hang">
+                                    <div class="san_pham_hinh" style="background-image: url(/assets/img/san_pham/@item.AnhSanPham);">
+
+                                    </div>
+                                    <div class="ten_sp_thongso">
+                                        <span class="thu_gon_chu ten_san_pham_dadat chu_gio_hang khoang_cach_dong_chu_giohang">@item.TenSanPham</span>
+                                        <div>
+                                            <img class="kich_thuoc_hinh_7ngay" src="~/assets/img/mien_phi_tra_7ngay.png" alt="">
+                                            <span class="ten_san_pham_dadat chu_gio_hang ">7 ngày miễn phí trả hàng</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col l-8 m-12 c-12">
+                                <div class="chi_tiet_gio_hang_tieude_phai">
+                                    <div class="row">
+                                        <div class="col l-3 m-3 c-3 an_thanh_phan_re">
+                                            <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                                @*<div class="tieu_de_tp_gia gia_cu chu_gio_hang" style="opacity: 0.7;"><span class="chu_gia_nho">đ</span> @item.gDonGia</div>*@
+                                                <div class="tieu_de_tp_gia chu_gio_hang dem_trai_thanh_phan_giohang"><span class="chu_gia_nho">đ</span> @item.DonGia</div>
+                                            </div>
+                                        </div>
+                                        <div class="col l-3 m-4 c-4">
+                                            <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                                <div class="dat_hang_so_luong">
+                                                    @*<button class="btn increase"><i class="fa-solid fa-minus"></i></button>
+                                                        <button id="value">1</button>
+                                                        <button class="btn decrease"><i class="fa-solid fa-plus"></i></button>*@
+                                                    @using (Html.BeginForm("capNhatSoLuong", "giohang", FormMethod.Post))
+                                                    {
+                                                        @Html.Hidden("id", item.MaSanPham)
+                                                        @Html.TextBox("soLuong", item.SoLuong, new { min = 1, type = "number", @onchange = "this.form.submit();", @class = "hopSoLuongGioHang" })
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col l-3 m-4 c-4">
+                                            <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                                <div class="tieu_de_tp_gia chu_gio_hang" style="color: rgb(224, 23, 23);"><span class="chu_gia_nho">đ</span> @ViewBag.tongThanhTien</div>
+                                            </div>
+                                        </div>
+                                        <div class="col l-3 m-4 c-4">
+                                            <div class="chi_tiet_gio_hang_tieude_gia xoa_san_pham can_chinh_tp">
+                                                <a href="/giohang/xoaGioHang?id=@item.MaSanPham"><i class="fa-solid fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+
+
+    </div>
+</div>
+
+<!-- Đặt hàng -->
+<div class="dat_hang">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 m-12 c-12">
+                <div class="dat_hang_app">
+                    <ul class="dat_hang_list can_chinh_tp">
+                        <div class="dat_hang_item can_chinh_tp">
+                            <input type="checkbox" name="" id="chontatca">
+                            <label for="chontatca" class="dat_hang_item_tp">
+                                Chọn tất cả
+                            </label>
+                            <button onclick="/giohang/xoaTatCaGioHang" class=" nut_xoa_hang dat_hang_item_tp">Xóa</button>
+                        </div>
+                    </ul>
+                    <ul class="dat_hang_list can_chinh_tp">
+                        <li class="dat_hang_item">Tổng thanh toán: <span style="color: red; font-weight: bold;">@ViewBag.TongThanhTien</span></li>
+                        <button class="dat_hang_item nut_mua_hang">Mua hàng</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- gợi ý sản phẩm -->
+<div class="thong_so_ky_thuat_sp cach_dong_san_pham_10">
+    <div class="grid wide mo_ta_san_pham_container ">
+        <div class="row">
+            <div class="col l-12">
+                <div class="thong_so_ky_thuat_sp_chi_tiet_sp_sethich kich_thuoc_chu can_chinh_tp ">Các sản phẩm tương tự</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Containt Nội dung -->
+<div class="noi_dung_cac_sp khu_padding_top">
+    <div class="grid wide">
+        <div class="row">
+
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/css/sanpham.js"></script>

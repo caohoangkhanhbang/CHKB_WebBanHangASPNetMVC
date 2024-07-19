@@ -1,0 +1,645 @@
+﻿
+@{
+    ViewBag.Title = "Trang giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutPageKhanhBangShop.cshtml";
+}
+@*Giỏ hàng*@
+<link rel="stylesheet" href="~/assets/css/giohang.css">
+
+<!-- chi tiết giỏ hàng -->
+<div class="chi_tiet_gio_hang_container">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 m-12 c-12">
+                <div class="chi_tiet_gio_hang an_thanh_phan_re">
+                    <div class="row">
+                        <div class="col l-4 m-4 c-4">
+                            <div class="chi_tiet_gio_hang_tieude_trai chu_gio_hang dem_trai_thanh_phan_giohang can_deu_chieu_cao">
+                                <div class="san_pham">Sản phẩm</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-8 m-8 c-8">
+                            <div class="chi_tiet_gio_hang_tieude_phai">
+                                <div class="row">
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Đơn Giá</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Số Lượng</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Số Tiền</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-3 c-3">
+                                        <div class="chi_tiet_gio_hang_tieude can_chinh_tp">
+                                            <div class="tieu_de_tp chu_gio_hang">Thao Tác</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- tên sản phẩm trong giỏ hàng -->
+        <div class="row dem_them_ben_duoi_2px">
+            <div class="col l-12 m-12 c-12">
+                <div class="ten_nha_xuat_ban">
+                    <div class="chi_tiet_gio_hang_tieude_trai chu_gio_hang dem_trai_thanh_phan_giohang can_deu_chieu_cao">
+                        <div class="san_pham">Nhà sách CHKB</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-12 m-12 c-12">
+                <div class="chi_tiet_gio_hang_thongso">
+                    <div class="row">
+                        <div class="col l-4 m-12 c-12">
+                            <a href="trangchu.html" class="chi_tiet_gio_hang_thongso_hinh">
+                                <input class="quyet_dinh_dathang" type="checkbox" name="" id="dat_hang">
+                                <div class="san_pham_hinh" style="background-image: url(/assets/img/duong-xua-may-trang-theo-got-chan-but.jpg);">
+
+                                </div>
+                                <div class="ten_sp_thongso">
+                                    <span class="thu_gon_chu ten_san_pham_dadat chu_gio_hang khoang_cach_dong_chu_giohang">Sách - Đường xưa mây trắng theo gót chân bụt</span>
+                                    <div>
+                                        <img class="kich_thuoc_hinh_7ngay" src="~/assets/img/mien_phi_tra_7ngay.png" alt="">
+                                        <span class="ten_san_pham_dadat chu_gio_hang ">7 ngày miễn phí trả hàng</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col l-8 m-12 c-12">
+                            <div class="chi_tiet_gio_hang_tieude_phai">
+                                <div class="row">
+                                    <div class="col l-3 m-3 c-3 an_thanh_phan_re">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="tieu_de_tp_gia gia_cu chu_gio_hang" style="opacity: 0.7;"><span class="chu_gia_nho">đ</span> 220.000</div>
+                                            <div class="tieu_de_tp_gia chu_gio_hang dem_trai_thanh_phan_giohang"><span class="chu_gia_nho">đ</span> 220.000</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="dat_hang_so_luong">
+                                                <button class="btn increase"><i class="fa-solid fa-minus"></i></button>
+                                                <button id="value">1</button>
+                                                <button class="btn decrease"><i class="fa-solid fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="tieu_de_tp_gia chu_gio_hang" style="color: rgb(224, 23, 23);"><span class="chu_gia_nho">đ</span> 220.000</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia xoa_san_pham can_chinh_tp">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row dem_them_ben_duoi_2px">
+            <div class="col l-12 m-12 c-12">
+                <div class="ten_nha_xuat_ban">
+                    <div class="chi_tiet_gio_hang_tieude_trai chu_gio_hang dem_trai_thanh_phan_giohang can_deu_chieu_cao">
+                        <div class="san_pham">Nhà sách CHKB</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-12 m-12 c-12">
+                <div class="chi_tiet_gio_hang_thongso">
+                    <div class="row">
+                        <div class="col l-4 m-12 c-12">
+                            <a href="trangchu.html" class="chi_tiet_gio_hang_thongso_hinh">
+                                <input class="quyet_dinh_dathang" type="checkbox" name="" id="dat_hang">
+                                <div class="san_pham_hinh" style="background-image: url(/assets/img/Khong-Diet-Khong-Sinh-Dung-So-Hai.jpg);">
+
+                                </div>
+                                <div class="ten_sp_thongso">
+                                    <span class="thu_gon_chu ten_san_pham_dadat chu_gio_hang khoang_cach_dong_chu_giohang">Không diệt không sinh đừng sợ hãi</span>
+                                    <div>
+                                        <img class="kich_thuoc_hinh_7ngay" src="~/assets/img/mien_phi_tra_7ngay.png" alt="">
+                                        <span class="ten_san_pham_dadat chu_gio_hang ">7 ngày miễn phí trả hàng</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col l-8 m-12 c-12">
+                            <div class="chi_tiet_gio_hang_tieude_phai">
+                                <div class="row">
+                                    <div class="col l-3 m-3 c-3 an_thanh_phan_re">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="tieu_de_tp_gia gia_cu chu_gio_hang" style="opacity: 0.7;"><span class="chu_gia_nho">đ</span> 88.000</div>
+                                            <div class="tieu_de_tp_gia chu_gio_hang dem_trai_thanh_phan_giohang"><span class="chu_gia_nho">đ</span> 88.000</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="dat_hang_so_luong">
+                                                <button class="btn increase"><i class="fa-solid fa-minus"></i></button>
+                                                <button id="value">1</button>
+                                                <button class="btn decrease"><i class="fa-solid fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="tieu_de_tp_gia chu_gio_hang" style="color: rgb(224, 23, 23);"><span class="chu_gia_nho">đ</span> 88.000</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia xoa_san_pham can_chinh_tp">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row dem_them_ben_duoi_2px">
+            <div class="col l-12 m-12 c-12">
+                <div class="ten_nha_xuat_ban">
+                    <div class="chi_tiet_gio_hang_tieude_trai chu_gio_hang dem_trai_thanh_phan_giohang can_deu_chieu_cao">
+                        <div class="san_pham">Nhà sách CHKB</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-12 m-12 c-12">
+                <div class="chi_tiet_gio_hang_thongso">
+                    <div class="row">
+                        <div class="col l-4 m-12 c-12">
+                            <a href="trangchu.html" class="chi_tiet_gio_hang_thongso_hinh">
+                                <input class="quyet_dinh_dathang" type="checkbox" name="" id="dat_hang">
+                                <div class="san_pham_hinh" style="background-image: url(/assets/img/san_pham/sach3.jfif);">
+
+                                </div>
+                                <div class="ten_sp_thongso">
+                                    <span class="thu_gon_chu ten_san_pham_dadat chu_gio_hang khoang_cach_dong_chu_giohang">Sách - Peep Inside Animal Homes</span>
+                                    <div>
+                                        <img class="kich_thuoc_hinh_7ngay" src="~/assets/img/mien_phi_tra_7ngay.png" alt="">
+                                        <span class="ten_san_pham_dadat chu_gio_hang ">7 ngày miễn phí trả hàng</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col l-8 m-12 c-12">
+                            <div class="chi_tiet_gio_hang_tieude_phai">
+                                <div class="row">
+                                    <div class="col l-3 m-3 c-3 an_thanh_phan_re">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="tieu_de_tp_gia gia_cu chu_gio_hang" style="opacity: 0.7;"><span class="chu_gia_nho">đ</span> 205.000</div>
+                                            <div class="tieu_de_tp_gia chu_gio_hang dem_trai_thanh_phan_giohang"><span class="chu_gia_nho">đ</span> 184.500</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="dat_hang_so_luong">
+                                                <button class="btn increase"><i class="fa-solid fa-minus"></i></button>
+                                                <button id="value">1</button>
+                                                <button class="btn decrease"><i class="fa-solid fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia can_chinh_tp">
+                                            <div class="tieu_de_tp_gia chu_gio_hang" style="color: rgb(224, 23, 23);"><span class="chu_gia_nho">đ</span> 184.500</div>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-4 c-4">
+                                        <div class="chi_tiet_gio_hang_tieude_gia xoa_san_pham can_chinh_tp">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Đặt hàng -->
+<div class="dat_hang">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 m-12 c-12">
+                <div class="dat_hang_app">
+                    <ul class="dat_hang_list can_chinh_tp">
+                        <div class="dat_hang_item can_chinh_tp">
+                            <input type="checkbox" name="" id="chontatca">
+                            <label for="chontatca" class="dat_hang_item_tp">
+                                Chọn tất cả
+                            </label>
+                            <button class=" nut_xoa_hang dat_hang_item_tp">Xóa</button>
+                        </div>
+                    </ul>
+                    <ul class="dat_hang_list can_chinh_tp">
+                        <li class="dat_hang_item">Tổng thanh toán: <span style="color: red; font-weight: bold;">492.500đ</span></li>
+                        <button class="dat_hang_item nut_mua_hang">Mua hàng</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- gợi ý sản phẩm -->
+<div class="thong_so_ky_thuat_sp cach_dong_san_pham_10">
+    <div class="grid wide mo_ta_san_pham_container ">
+        <div class="row">
+            <div class="col l-12">
+                <div class="thong_so_ky_thuat_sp_chi_tiet_sp_sethich kich_thuoc_chu can_chinh_tp ">Các sản phẩm tương tự</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Containt Nội dung -->
+<div class="noi_dung_cac_sp khu_padding_top">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/duong-xua-may-trang-theo-got-chan-but.jpg);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">SÁCH - Không diệt không sinh đừng sợ hãi (Tái bản lần thứ 5) - Tác giả Thích Nhất Hạnh</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">77.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 5.7k</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">30%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach3.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách - Peep Inside Animal Homes</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">77.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 5.7k</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">30%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach_ghep_hinh.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách - Bộ ghép hình Book and Jigsaw Under the Sea Maze</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">77.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 5.7k</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">30%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/ran_sang_ho4.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách Peep inside a Coral Reef Tìm hiểu rạn san hô</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">77.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 5.7k</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">30%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach5.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách Very First Questions and Answers What is Sleep?</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">77.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 5.7k</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">20%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach6.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách kể chuyện tương tác tiếng Anh Usborne cho bé 3 tuổi Peep Inside night time</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">128.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 42</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">10%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach7.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách - Lift The Flap Colours</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">239.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 7</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">10%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach8.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách Usborne - Pop Up Jungle</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">236.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 6</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">10%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach9.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách Cho Bé 1 Tuổi GARDEN SOUNDS</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">326.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 8</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">30%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach10.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách kể chuyện tương tác tiếng Anh Usborne cho bé 3 tuổi Peep Inside night time</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">184.500<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 5.7k</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">5%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach11.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách See Inside Oceans - Khám phá đại dương</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">252.000<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 3</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">10%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col l-2 m-3 c-6">
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/sach12.jfif);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">Sách cho bé Khám phá không gian Peep Inside Space</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>15k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">184.500<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 3</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">5%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="~/assets/css/sanpham.js"></script>
+
+</div>
+

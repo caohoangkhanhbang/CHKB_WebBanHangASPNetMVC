@@ -1,0 +1,430 @@
+﻿@model WebBanHangCuaKhanhBang.Models.SanPham
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_LayoutPageKhanhBangShop.cshtml";
+}
+
+
+<!-- Danh sách thư mục -->
+<div class="danh_sach_thumuc" style="padding-top: 0;">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12">
+                <div class="danh_sach_thumuc_container">
+                    <ul class="danh_sach_thumuc_list">
+                        <li class="danh_sach_thumuc_pt">
+                            <a href="/home/index" class="danh_sach_thumuc_link kich_thuoc_chu">CHKB Khánh Băng shop</a>
+                        </li>
+                        <i class="fa-solid fa-chevron-right mau_thu_muc_icon"></i>
+                        <li class="danh_sach_thumuc_pt">
+                            <a href="/home/DanhMucTheoMaSanPham?id=@Model.MaSanPham" class="danh_sach_thumuc_link kich_thuoc_chu">@ViewBag.DanhMuc</a>
+                        </li>
+                        <i class="fa-solid fa-chevron-right mau_thu_muc_icon"></i>
+                        <li class="danh_sach_thumuc_pt kich_thuoc_chu">@Model.TenSanPham</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mô tả sản phẩm -->
+<div class="mo_ta_san_pham">
+    <div class="grid wide mo_ta_san_pham_container">
+        <div class="row">
+            <div class="col l-4 m-4 c-12">
+                <div class="mo_ta_san_pham_slide_sanpham">
+                    <div class="slide slide_auto" onclick="next()">
+                        <img src="/assets/img/san_pham/@Model.AnhSanPham" alt="@Model.AnhSanPham" id="hinh">
+                    </div>
+                </div>
+
+                <div class="row dem_chia_se">
+                    <div class="col l-6">
+                        <div class="mo_ta_san_pham_chiase">
+                            <span class="kich_thuoc_chu mau_chu">Chia sẻ: </span>
+                            <a href="https://chat.zalo.me/" class="zalo_icon kich_thuoc_chia_se" style="background-image: url(/assets/img/zalo_lienlac.png);"></a>
+                            <a href="https://www.facebook.com/index.php" class="zalo_icon kich_thuoc_chia_se" style="background-image: url(/assets/img/facebook_lienlac.png);"></a>
+
+                            <a href="https://www.tiktok.com/_caohoangkhanhbang_" class="zalo_icon kich_thuoc_chia_se" style="background-image: url(/assets/img/TikTok_lienlac.png);"></a>
+                        </div>
+                    </div>
+                    <div class="col l-6">
+                        <div class="mo_ta_san_pham_luotthich">
+                            <a href="#"><i class="fa-regular fa-heart mo_ta_san_pham_luotthich_kt"></i></a>
+                            <span class="kich_thuoc_chu">Đã thích(2)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l-8 m-8 c-12">
+                <div class="mo_ta_san_pham_mota">
+                    <span class="mo_ta_san_pham_ten_san_pham mau_chu">@Model.TenSanPham</span>
+                    <div class="mo_ta_san_pham_danhgia">
+                        <span class="chu_gach_chan chu_mo_ta_sp mau_chu so_luong_danh_gia_sp">5.0</span>
+                        <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                        <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                        <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                        <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                        <i class="fa-solid fa-star kich_thuoc_sao khoang_cach_sp"></i>
+                        <span class="chu_mo_ta_sp khoang_cach_sp dau_phan_cach mau_chu"><span class="chu_gach_chan">1</span> đánh giá</span>
+                        <span class="chu_mo_ta_sp dau_phan_cach mau_chu">1 đã bán</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col l-12">
+                        <div class="mo_ta_san_pham_gia">
+                            <span class="gia_cu chu_mo_ta_sp"><span class="chu_gach_chan chu_mo_ta_sp">đ</span>@Model.GiaGoc</span>
+                            <span class="gia_chinh"><span class="chu_gach_chan kich_thuoc_gia_nho">đ</span>@Model.GiaBan</span>
+                            <span class="giam_gia">10% GIẢM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row can_chinh_tp">
+                    <div class="col l-2">
+                        <span class="chu_mo_ta_sp" style="display: block; margin: 10px 0;">Vận chuyển</span>
+                    </div>
+
+                    <div class="col l-10">
+                        <div class="hinh_thuc_van_chuyen">
+                            <div class="hinh_thuc_van_chuyen_mienphi">
+                                <img class="hinh_van_chuyen" src="/assets/img/mien_phi_van_chuyen.png" alt="Freeship">
+                                <span class="chu_mo_ta_sp">Miễn phí vận chuyển</span>
+                            </div>
+                            <div class="van_chuyen_den">
+                                <div class="dia_diem_van_chuyen_den">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                    <span class="chu_mo_ta_sp van_chuyen_toi">Vận chuyển tới</span>
+                                    <a class="chu_mo_ta_sp dia_diem_giao_hang" href="#">An Phước, Mang Thít, Vĩnh Long<i class="fa-solid fa-caret-down"></i></a>
+                                </div>
+                                <div class="phi_van_chuyen">
+                                    <span class="chu_mo_ta_sp so_tien_van_chuyen">Phí vận chuyển</span>
+                                    <span class="chu_mo_ta_sp"><span class="chu_gach_chan kich_thuoc_gia_nho">đ</span> 0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row can_chinh_tp cach_dong_san_pham_10">
+                    <div class="col l-2">
+                        <span class="chu_mo_ta_sp" style="display: block; margin: 10px 0;">Số lượng</span>
+                    </div>
+
+                    <div class="col l-10">
+                        <div class="dat_hang_so_luong">
+                            <button class="btn increase"><i class="fa-solid fa-minus"></i></button>
+                            <button id="value">1</button>
+                            <button class="btn decrease"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col l-12">
+                        <div class="dat_hang can_chinh_tp">
+                            <a href="/giohang/themGioHang?ms=@Model.MaSanPham" class="chu_mo_ta_sp dat_hang_them_vao_gio_hang"><i class="fa-solid fa-cart-shopping dem_icon"></i>Thêm vào giỏ hàng</a>
+                            <a href="/giohang/themGioHang?ms=@Model.MaSanPham" class="chu_mo_ta_sp dat_hang_mua_ngay ">Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row duong_ke_ngang_chi_tiet_sp">
+                    <div class="col l-4 can_chinh_tp chinh_sach_uu_dai_sp1">
+                        <img class="kich_thuoc_chia_se dem_icon" src="/assets/img/tra_hang-icon.png" alt="trả hàng">
+                        <span class="chu_mo_ta_sp" style="font-weight: 390;">7 ngày miễn phí trả hàng</span>
+                        <div class="uu_dai_sp_cuthe">
+                            <span class="kich_thuoc_chu">Hoàn toàn yên tâm khi mua hàng ở CHKB Khánh Băng với ưu đãi miễn phí trả hàng lên đến 7 ngày.</span>
+                        </div>
+                    </div>
+
+                    <div class="col l-4 can_chinh_tp chinh_sach_uu_dai_sp2">
+                        <img class="kich_thuoc_chia_se dem_icon" src="/assets/img/chinh_hang.png" alt="chính hảng">
+                        <span class="chu_mo_ta_sp" style="font-weight: 390;">Hàng chính hãng 100%</span>
+                        <div class="uu_dai_sp_cuthe2">
+                            <span class="kich_thuoc_chu">Nhận lại gấp mười số tiền mà bạn đã thanh toán cho sản phẩm không chính hãng từ CHKB Khánh Băng</span>
+                        </div>
+                    </div>
+                    <div class="col l-4 can_chinh_tp chinh_sach_uu_dai_sp3">
+                        <img class="kich_thuoc_chia_se dem_icon" src="/assets/img/van_chuyen_icon.png" alt="vận chuyển">
+                        <span class="chu_mo_ta_sp" style="font-weight: 390;">Miễn phí vận chuyển</span>
+                        <div class="uu_dai_sp_cuthe3">
+                            <span class="kich_thuoc_chu">Ưu đãi miễn phí vận chuyển lên tới 45,000 VNĐ cho đơn hàng của CHKB Khánh Băng từ 145,000 VNĐ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="thong_so_ky_thuat_sp cach_dong_san_pham_10">
+        <div class="grid wide mo_ta_san_pham_container ">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="thong_so_ky_thuat_sp_chi_tiet_sp kich_thuoc_chu can_chinh_tp ">Chi tiết sản phẩm</div>
+                    <div class="thong_so_ky_thuat_sp_danhmuc an_thanh_phan_re">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Danh mục</div>
+                        <a href="trangchu.html" class="thong_so_ky_thuat_sp_list kich_thuoc_chu danh_sach_thumuc_pt thong_so_ky_thuat_sp_tieude">CHKB Khánh Băng shop</a>
+                        <i class="fa-solid fa-chevron-right mau_thu_muc_icon danh_sach_thumuc_pt"></i>
+                        <a href="/home/DanhMucTheoMaSanPham?id=@Model.MaSanPham" class="thong_so_ky_thuat_sp_list kich_thuoc_chu ">@ViewBag.DanhMuc</a>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Thương hiệu</div>
+                        <a target="_blank" href="https://usborne.com/row/books" class="thong_so_ky_thuat_sp_list kich_thuoc_chu danh_sach_thumuc_pt thong_so_ky_thuat_sp_tieude">@Model.XuaXu</a>@*chưa*@
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Nhập khẩu/ trong nước</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">
+                            @if(string.Compare(Model.XuaXu, "Việt Nam", true)==0)
+                            {
+                                <span>@Model.XuaXu</span>
+                            }
+                            else
+                            {
+                                <span>Nhập khẩu</span>
+                            }
+                            
+                        </div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Ngôn ngữ</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.XuaXu</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Hạn sử dụng</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.HanSuDung</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Loại phiên bản</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Phiên bản thông thường</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Nhà Phát Hành</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Usborne @*@Model.NhaCungCaps.FirstOrDefault().TenNhaCungCap*@</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Mã Sản phẩm</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.MaSanPham</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Xuất xứ</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.XuaXu</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Năm xuất bản</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.NgaySanXuat</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Kho hàng</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.MaSanPham</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Gửi từ</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Mang Thít - Vĩnh Long</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_chi_tiet_sp kich_thuoc_chu can_chinh_tp ">Mô tả sản phẩm</div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc ">
+                        <span class="kich_thuoc_chu thong_so_ky_thuat_sp_tieude">PEEP INSIDE ANIMAL HOMES</span>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu thong_so_ky_thuat_sp_danhmuc_mt_10">1. Thành phần:</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.ThanhPhan</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu thong_so_ky_thuat_sp_danhmuc_mt_10">2. Lưu ý:</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.LuuY</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu thong_so_ky_thuat_sp_danhmuc_mt_10">3. Mô tả:</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">@Model.MoTa</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">THÔNG TIN CHI TIẾT</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">
+                            <div class="kich_thuoc_chu cach_dong_san_pham_10">Loại sản phẩm: @ViewBag.DanhMuc</div>
+                            <div class="kich_thuoc_chu cach_dong_san_pham_10">ISBN:9781409550181</div>
+                            <div class="kich_thuoc_chu cach_dong_san_pham_10">Tên sản phẩm: @Model.TenSanPham</div>
+                            <div class="kich_thuoc_chu cach_dong_san_pham_10">Kích thước: </div>
+                            <div class="kich_thuoc_chu cach_dong_san_pham_10">Nhà sản xuất </div>
+                            <div class="kich_thuoc_chu cach_dong_san_pham_10">Năm sản xuất: @Model.NgaySanXuat</div>
+                        </div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Giá gốc: @Model.GiaGoc VNĐ</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Giá Red Owl: @Model.GiaBan VNĐ</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Cam kết sản phẩm</div>
+                        <div class="thong_so_ky_thuat_sp_tieude kich_thuoc_chu ">Nói không với hàng fake</div>
+                    </div>
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <span class="kich_thuoc_chu thong_so_ky_thuat_sp_tieude">CHKB Khánh Băng chân thành cảm ơn!</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- đánh giá sản phẩm -->
+    <div class="thong_so_ky_thuat_sp cach_dong_san_pham_10">
+        <div class="grid wide mo_ta_san_pham_container ">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="thong_so_ky_thuat_sp_chi_tiet_sp kich_thuoc_chu can_chinh_tp ">Đánh giá sản phẩm</div>
+                </div>
+            </div>
+
+            <div class="danh_gia_san_pham">
+                <div class="row">
+                    <div class="col l-2">
+                        <div class="danh_gia_san_pham_sosao can_chinh_tp">
+                            <span class="danh_gia_san_pham_sosao_sl kich_thuoc_gia_nho"><span class="so_sao_lon">5 </span>trên 5</span>
+                            <div class="danh_gia_san_pham_so_luong_sao">
+                                <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                                <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                                <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                                <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                                <i class="fa-solid fa-star kich_thuoc_sao"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col l-10">
+                        <div class="danh_gia_san_pham_ca_phan_khuc can_chinh_tp">
+                            <div class="danh_gia_thong_ke can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">Tất cả</span>
+                            </div>
+
+                            <div class="danh_gia_thong_ke can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">5 sao(1)</span>
+                            </div>
+
+                            <div class="danh_gia_thong_ke can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">4 sao(0)</span>
+                            </div>
+
+                            <div class="danh_gia_thong_ke can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">3 sao(0)</span>
+                            </div>
+
+                            <div class="danh_gia_thong_ke can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">2 sao(0)</span>
+                            </div>
+
+                            <div class="danh_gia_thong_ke can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">1 sao(0)</span>
+                            </div>
+
+                            <div class="danh_gia_thong_ke_binhluan can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">Có bình luận(0)</span>
+                            </div>
+
+                            <div class="danh_gia_thong_ke_anhvideo can_chinh_tp">
+                                <span class="danh_gia_san_pham_thong_ke_tp kich_thuoc_chu">Có hình ảnh / video(0)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col l-12">
+                        <div class="danh_gia_san_pham_nguoidung">
+                            <div class="row">
+                                <div class="col-l-2">
+                                    <div class="danh_gia_san_pham_nguoidung_danhgia can_chinh_tp" style="background-image: url(/assets/img/anh_nguoi_dung/Khanh_Bang.png);"></div>
+                                </div>
+
+                                <div class="col l-10">
+                                    <div class="ten_nguoi_dung kich_thuoc_chu cach_dong_san_pham_10">Cao Hoàng Khánh Băng</div>
+                                    <div class="so_sao_nguoi_dung_danh_gia">
+                                        <i class="fa-solid fa-star kich_thuoc_sao_danhgia"></i>
+                                        <i class="fa-solid fa-star kich_thuoc_sao_danhgia"></i>
+                                        <i class="fa-solid fa-star kich_thuoc_sao_danhgia"></i>
+                                        <i class="fa-solid fa-star kich_thuoc_sao_danhgia"></i>
+                                        <i class="fa-solid fa-star kich_thuoc_sao_danhgia"></i>
+                                    </div>
+                                    <div class="ngay_danh_gia_nguoidung">
+                                        <span class="ngay_thang_danh_gia kich_thuoc_chu cach_dong_san_pham_10">02/05/2023 12:45</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- gợi ý sản phẩm -->
+<div class="thong_so_ky_thuat_sp cach_dong_san_pham_10">
+    <div class="grid wide mo_ta_san_pham_container ">
+        <div class="row">
+            <div class="col l-12">
+                <div class="thong_so_ky_thuat_sp_chi_tiet_sp_sethich kich_thuoc_chu can_chinh_tp ">Có thể bạn sẽ thích!</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- cam kết về sản phẩm -->
+<div class="cam_ket_ve_san_pham">
+    <div class="row can_deu_tp_mt">
+        <div class="col l-4 can_chinh_tp chinh_sach_uu_dai_sp1 thong_so_ky_thuat_sp_danhmuc_mt_10">
+            <img class="kich_thuoc_chia_se dem_icon" src="/assets/img/tra_hang-icon.png" alt="trả hàng">
+            <span class="chu_mo_ta_sp mau_icon_sp" style="font-weight: bold;">7 ngày miễn phí trả hàng</span>
+            <div class="uu_dai_sp_cuthe">
+                <span class="kich_thuoc_chu">Hoàn toàn yên tâm khi mua hàng ở CHKB Khánh Băng với ưu đãi miễn phí trả hàng lên đến 7 ngày.</span>
+            </div>
+        </div>
+
+        <div class="col l-4 can_chinh_tp chinh_sach_uu_dai_sp2 thong_so_ky_thuat_sp_danhmuc_mt_10">
+            <img class="kich_thuoc_chia_se dem_icon" src="/assets/img/chinh_hang.png" alt="chính hảng">
+            <span class="chu_mo_ta_sp mau_icon_sp" style="font-weight: bold;">Hàng chính hãng 100%</span>
+            <div class="uu_dai_sp_cuthe2">
+                <span class="kich_thuoc_chu">Nhận lại gấp mười số tiền mà bạn đã thanh toán cho sản phẩm không chính hãng từ CHKB Khánh Băng</span>
+            </div>
+        </div>
+        <div class="col l-4 can_chinh_tp chinh_sach_uu_dai_sp3 thong_so_ky_thuat_sp_danhmuc_mt_10">
+            <img class="kich_thuoc_chia_se dem_icon" src="/assets/img/van_chuyen_icon.png" alt="vận chuyển">
+            <span class="chu_mo_ta_sp mau_icon_sp" style="font-weight: bold;">Miễn phí vận chuyển</span>
+            <div class="uu_dai_sp_cuthe3">
+                <span class="kich_thuoc_chu">Ưu đãi miễn phí vận chuyển lên tới 45,000 VNĐ cho đơn hàng của CHKB Khánh Băng từ 145,000 VNĐ</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

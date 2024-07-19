@@ -1,0 +1,76 @@
+﻿@model WebBanHangCuaKhanhBang.Models.DanhMuc
+@{
+    ViewBag.Title = "Cập nhật danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 1604.44px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý danh mục</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Cập nhật danh mục</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Cập nhật danh mục</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body" style="display: block;">
+                @using (Html.BeginForm("capNhatDanhMuc", "danhmuc", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @*@Html.ValidationSummary(true)*@
+                    @Html.HiddenFor(theo => theo.MaDanhMuc)
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tên danh mục</label>
+                            @Html.TextBoxFor(them => them.TenDanhMuc, new { @class = "form-control", type = "text", @placeholder = "Mời nhập tên danh mục" })
+                            @Html.ValidationMessageFor(loi => loi.TenDanhMuc, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="file" name="AnhDanhMuc" accept="image/*" value="@Model.AnhDanhMuc" />
+                            @Html.ValidationMessageFor(loi => loi.AnhDanhMuc, null, new { @class = "text-danger" })
+                        </div>
+                        <a href="/admin/danhmuc/danhmucview" class="btn btn-danger">Hủy</a>
+                        <button type="submit" class="btn btn-primary" onclick="stepper.next()">Cập nhật</button>
+                    </div>
+
+                }
+
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer" style="display: block;">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>

@@ -1,0 +1,80 @@
+﻿@model WebBanHangCuaKhanhBang.Models.DanhMuc
+@{
+    ViewBag.Title = "Thêm danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+<div class="content-wrapper" style="min-height: 1604.44px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý sản phẩm</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Thêm sản phẩm</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Thêm sản phẩm</h3>
+
+                <div class="card-tools">
+                    <a href="/danhmuc/them" class="btn btn-primary">Thêm</a>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body" style="display: block;">
+                @using (Html.BeginForm("themdanhmuc", "danhmuc", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @*@Html.ValidationSummary(true)*@
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tên danh mục</label>
+                            @Html.TextBoxFor(them => them.TenDanhMuc, new { @class = "form-control", type = "text", @placeholder = "Mời nhập sản phẩm" })
+                            @Html.ValidationMessageFor(loi => loi.TenDanhMuc, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Ảnh danh mục</label>
+                            <input type="file" name="AnhDanhMuc" value="" @*multiple*@ accept="image/*" />
+                            @*@Html.TextBoxFor(them => them.AnhSanPham, new { type = "file", @class = "form-control" })*@
+                            @Html.ValidationMessageFor(loi => loi.AnhDanhMuc, null, new { @class = "text-danger" })
+                        </div>
+                        <a href="/admin/sanpham/sanphamview" class="btn btn-danger">Hủy</a>
+                        <button type="submit" class="btn btn-primary" onclick="stepper.next()">Thêm</button>
+                    </div>
+
+                }
+
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer" style="display: block;">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+

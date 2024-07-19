@@ -1,0 +1,19 @@
+/* ipad */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+}
+
+/* mobile */
+@media (max-width: 46.1875em) {
+
+    .nut_dang_nhap,
+    .o_dang_nhap {
+        width: 296px;
+    }
+    
+    .noi_dung_the_gioithieu_the,
+    .noi_dung_the_dang_nhap_the {
+        width: 328px;
+        max-width: calc(100%-32px);
+    }
+}

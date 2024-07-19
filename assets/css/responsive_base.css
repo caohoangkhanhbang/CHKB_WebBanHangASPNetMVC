@@ -1,0 +1,242 @@
+/* cả 2 (max-width: 63.9375em) and*/
+@media   (max-width: 69.5625em){
+    /* bỏ chọn khi ấn trên mobile */
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .an_header {
+        display: none;
+    }
+
+    .slide:hover .cham_btn {
+        transform: translateY(0);
+        transform: scale(1);
+    }
+
+    .fa-circle-chevron-right,
+    .fa-circle-chevron-left {
+        position: absolute;
+        top: 50%;
+    }
+
+    .col.l-12 {
+        width: 100%;
+    }
+
+    /* giỏ hàng tablet, mobile ================== */
+    .tieu_de_tp_gia.gia_cu.chu_gio_hang,
+    .tieu_de_tp_gia.chu_gio_hang.dem_trai_thanh_phan_giohang {
+        display: none;
+    } 
+
+    .col.l-3.m-3.c-3.an_thanh_phan_re,
+    .an_thanh_phan_re {
+        display: none;
+    }
+
+    
+
+    .btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    #value {
+        width: 40px;
+        height: 30px;
+    }
+    /* ========================================== */
+
+    /* chi tiết sản phẩm */
+    .can_deu_tp_mt {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    
+    .thong_so_ky_thuat_sp_danhmuc_mt_10 {
+        margin-bottom: 10px;
+    }
+
+    .danh_sach_thumuc_list {
+        margin-left: 10px;
+    }
+
+
+    .chu_mo_ta_sp {
+        font-size: 1.2rem;
+    }
+
+    .danh_sach_thumuc {
+        padding-top: 95px;
+    }
+
+ 
+}
+
+/* ipad */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+    .thong_tin_sp {
+        right: -30px;
+    }
+
+    .slide #hinh {
+        height: 52%;
+    }
+
+    .slide {
+        height: auto;
+    }
+
+    .noi_dung_sp_giaban_soluong {
+        margin-left: 19px;
+    }
+
+    span.noi_dung_sp_giaban_soluong.chu_san_pham {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .chi_tiet_gio_hang_container {
+        padding-top: 140px;
+    }
+}
+
+/* Phần chân trang */
+/* mobile */
+@media (max-width: 46.1875em) {
+    .chan_trang_dia_chi {
+        padding: 0 20px 60px;
+    }
+
+    .re_dem_trai_phai_tp {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .re_can_deu_tp_chantrang {
+        display: flex;
+        justify-content: center;
+    }
+
+    .van_chuyen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+    }
+
+    .chan_trang_mota {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trinh_tai_app {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* header */
+    .logo_nhanhieu {
+        min-width: 63px;
+        min-height: 21px;
+    }
+
+    .giohang {
+        width: 16%;
+        padding-right: 26px;
+    }
+
+    .giohang_icon_sl {
+        position: absolute;
+        top: -10px;
+        right: -8px;
+        padding: 1px 5px;
+    }
+
+    .slide {
+        height: 136px;
+    }
+
+    .slide_auto {
+        height: auto;
+    }
+
+    .slide_dau_trang {
+        padding-top: 100px;
+    }
+
+    /* sản phẩm ================ */
+    .noi_dung_sp {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .chan_trang_dia_chi {
+        width: 100%;
+    }
+
+    .noi_dung_cac_sp {
+        padding-bottom: 0;
+    }
+
+    .col.l-12 {
+        width: 100%;
+    }
+
+    
+
+    /* giỏ hàng đặt hàng */
+    .nut_mua_hang {
+        min-width: 80px;
+        min-height: 30px;
+    }
+
+    .dat_hang_item {
+        font-size: 1rem;
+    }
+
+    /* sản phẩm chi tiết */
+
+    .thong_so_ky_thuat_sp_tieude {
+        min-width: 50%;
+    }
+
+    .dat_hang_them_vao_gio_hang,
+    .dat_hang_mua_ngay {
+        width: 120px;
+        height: 40px;
+    }
+
+    
+    .dat_hang_them_vao_gio_hang {
+        width: 130px;
+    }
+
+    /* hover giỏ hàng */
+    .thong_tin_sp {
+        width: 95vw;
+        left: 0;
+        transform: translateX(-86%);
+    }
+
+    .thong_tin_sp::after {
+        top: -29px;
+        right: 5%;
+    }
+
+    .chi_tiet_gio_hang_container {
+        padding-top: 100px;
+    }
+    
+}

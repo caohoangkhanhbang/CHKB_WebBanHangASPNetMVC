@@ -1,0 +1,164 @@
+.dau_trang_logo_dangnhap {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.dau_trang_dangnhap {
+    background-image: linear-gradient(to right, rgb(0 255 255), rgb(112 0 255 / 59%));
+}
+
+.dang_nhap_logo {
+    padding: 5px;
+}
+
+.dang_nhap_chu {
+    --cao_dong: 4rem;
+    line-height: var(--cao_dong);
+    font-size: var(--cao_dong);
+    color: rgb(12, 11, 11);
+    margin-left: 20px;
+}
+
+.logo_nhanhieu_dangnhap {
+    min-width: 122px;
+    min-height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.noi_dung_the_dang_nhap_the {
+    width: 640px;
+    height: 600px;
+    border-radius: 9px;
+    box-shadow: 0 0 2px white;
+    padding: 63px 16px;
+    margin: 0 10px;
+    backdrop-filter: blur(10px);
+    animation: chuyenCanhKhungDangKy linear 1s;
+}
+
+@keyframes chuyenCanhKhungDangKy
+{
+    from {
+        opacity: 0;
+        transform: scale3d(0.2);
+    }
+    to {
+        transform: scale3d(1);
+        opacity: 1;
+    }
+}
+
+.dang_nhap_header {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3rem;
+    padding: 30px 0;
+    color: white;
+}
+
+.chu_dang_nhap {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.dang_nhap_header_pt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.o_dang_nhap {
+    width: 379px;
+    height: 42px;
+    border-radius: 20px;
+    border: 2px solid #e7e7e9;
+    outline: none;
+    font-size: 1.4rem;
+    padding: 0 10px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: white;
+}
+
+.o_dang_nhap::placeholder {
+    color: white;
+}
+
+
+.nut_dang_nhap {
+    width: 379px;
+    height: 42px;
+    border-radius: 20px;
+    margin: 10px 0;
+    background-color: #1dbfaf;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+.nut_dang_nhap:hover {
+    opacity: 0.5;
+}
+
+
+
+.chua_co_tai_khoang_dn {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.di_den_dang_ky {
+    margin-left: 5px;
+    color: red;
+    font-weight: bold;
+}
+
+.logo_thuong_hieu {
+    width: 100px;
+    object-fit: contain;
+}
+
+.chu_chan_trang_dk_tp {
+    font-size: 1rem;
+    color: #757a90;
+}
+
+.dieu_khoang {
+    text-decoration: underline;
+}
+
+.noi_dung_the_dang_nhap {
+    width: 100%;
+    padding: 30px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ma_dang_nhap_o_dang_nhap {
+    position: relative;
+}
+
+.gui_lai_ma {
+    position: absolute;
+    height: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e94e905c;
+    border-radius: 20px;
+    right: 5px;
+    color: white;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.gui_lai_ma:hover {
+    background-color: #e94e91;
+    
+}

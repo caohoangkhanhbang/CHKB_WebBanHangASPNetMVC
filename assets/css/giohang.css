@@ -1,0 +1,128 @@
+/* dùng chung */
+.chu_gio_hang
+{
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.can_deu_chieu_cao {
+    display: flex;
+    align-items: center;
+}
+
+.dem_trai_thanh_phan_giohang {
+    margin-left: 20px;
+}
+
+.khoang_cach_dong_chu_giohang {
+    margin: 10px 0;
+}
+
+.thu_gon_chu {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+/* ==================================================================================== */
+.chi_tiet_gio_hang_container {
+    background-color: #f5f5f5;
+    padding-top: 200px;
+    padding-bottom: 60px;
+}
+
+.chi_tiet_gio_hang {
+    height: var(--chieu_cao_tieude);
+    border: 2px solid #f5f5f5;
+    border-radius: 9px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.chi_tiet_gio_hang_tieude,
+.chi_tiet_gio_hang_tieude_trai {
+    height: 55px;
+}
+
+.ten_nha_xuat_ban {
+    background-color: white;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom: 2px solid #f5f5f5;
+}
+.chi_tiet_gio_hang_thongso {
+    background-color: white;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+.san_pham_hinh {
+    width: 80px;
+    height: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.dem_them_ben_duoi_2px {
+    margin-bottom: 2px;
+}
+
+.chi_tiet_gio_hang_thongso_hinh {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.kich_thuoc_hinh_7ngay {
+    width: 16px;
+    height: 15px;
+}
+
+.dat_hang_item_tp {
+    margin-left: 5px;
+}
+
+
+.ten_sp_thongso {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.chi_tiet_gio_hang_tieude_gia {
+    min-height: 100px;
+}
+
+.chu_gia_nho {
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+
+.gia_cu {
+    text-decoration: line-through;
+}
+
+.fa-trash {
+    font-size: 2rem;
+}
+
+.fa-trash:hover {
+    color: red;
+}
+
+.quyet_dinh_dathang {
+    margin: 0 10px;
+}
+
+.dat_hang {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(9px);
+    background-color: transparent;
+    box-shadow: 0 -.2px 5px rgba(0, 0, 0, .2);
+}
+

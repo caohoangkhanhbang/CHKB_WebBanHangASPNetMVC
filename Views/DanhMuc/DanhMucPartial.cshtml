@@ -1,0 +1,15 @@
+﻿@model IEnumerable<WebBanHangCuaKhanhBang.Models.DanhMuc>
+
+
+
+@foreach (var item in Model) {
+    <div class="col l-1-2 m-3 c-4">
+        <div class="danh_muc_element">
+            <a href="/Home/SanPhamTheoDanhMuc?id=@item.MaDanhMuc" class="danh_muc_pt can_chinh_tp">
+                <img src="~/assets/img/icon_gioiThieu/@item.AnhDanhMuc" alt="@item.TenDanhMuc" class="icon_danh_muc">
+                <span class="chu_danh_muc kich_thuoc_chu">@item.TenDanhMuc</span>
+            </a>
+        </div>
+    </div>
+}
+

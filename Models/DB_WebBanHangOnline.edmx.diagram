@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c45f34226f1476880f24359b4a25cba" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.AnhDoiTra" Width="1.5" PointX="8.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.BinhLuan" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.ChamSocKhachHang" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.ChiTietDanhMuc" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.ChiTietDoiTra" Width="1.5" PointX="8.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.ChiTietHoaDon" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.ChucNang" Width="1.5" PointX="1.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.DanhMuc" Width="1.5" PointX="1.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.DiaChi" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.DoiTra" Width="1.5" PointX="6" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.DonViTinh" Width="1.5" PointX="1.5" PointY="67.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.DonViVanChuyen" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.GioHang" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.GioiThieuWeb" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.Kho" Width="1.5" PointX="1.5" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.KhoiLuong" Width="1.5" PointX="3.75" PointY="67.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.KhuyenMai" Width="1.5" PointX="3" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.LichSuMuaHang" Width="1.5" PointX="3" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.LoaiNhanVien" Width="1.5" PointX="3.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.LoaiSanPham" Width="1.5" PointX="1.5" PointY="53.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.NhaCungCap" Width="1.5" PointX="1.5" PointY="56.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.NhanVien" Width="1.5" PointX="6" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.PhieuTichDiem" Width="1.5" PointX="3" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.QuanTriVien" Width="1.5" PointX="3" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.QuangCao" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.SanPham" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.SanPham_KhoiLuong" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.TaiKhoan_DiaChi" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.ThongTinGiaoHang" Width="1.5" PointX="3" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.TrangThaiSanPham" Width="1.5" PointX="3" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.UuDai" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.ViDienTu" Width="1.5" PointX="3" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_WebBanHangOnlineModel.YeuCauDoiTra" Width="1.5" PointX="3.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_AnhDoiTra_DoiTra" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_BinhLuan_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_ChiTietDoiTra_DoiTra" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_ChiTietHoaDon_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_ChiTietHoaDon_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_SanPham_ChucNang" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_TaiKhoan_DiaChi_DiaChi" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_DoiTra_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_DoiTra_YeuCauDoiTra" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_KhoiLuong_DonViTinh" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_GioHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_GioHang_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_SanPham_KhoiLuong_KhoiLuong" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_KhuyenMai_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_LichSuMuaHang_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_NhanVien_LoaiNhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_SanPham_LoaiSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_NhanVien_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_PhieuTichDiem_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_QuanTriVien_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_SanPham_KhoiLuong_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_TrangThaiSanPham_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_TaiKhoan_DiaChi_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_ThongTinGiaoHang_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.FK_ViDienTu_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.DanhMuc_ChiTiet" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.DanhMuc_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.Kho_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_WebBanHangOnlineModel.NhaCungCap_SanPham" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

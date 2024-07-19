@@ -1,0 +1,92 @@
+﻿@model List<WebBanHangCuaKhanhBang.Models.SanPham>
+@{
+    ViewBag.Title = "Sản phẩm";
+    Layout = "~/Views/Shared/_LayoutPageKhanhBangShop.cshtml";
+}
+
+
+<div class="mo_ta_san_pham">
+    <div class="thong_so_ky_thuat_sp cach_dong_san_pham_10">
+        <div class="grid wide mo_ta_san_pham_container ">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="thong_so_ky_thuat_sp_chi_tiet_sp kich_thuoc_chu can_chinh_tp ">Sản phẩm theo: @ViewBag.searchText</div>
+
+
+                    <!-- Containt Nội dung -->
+                    <div class="noi_dung_cac_sp khu_padding_top">
+                        <div class="grid wide">
+                            <div class="row">
+                                @if (Model.Count > 0)
+                                {
+
+                                    foreach (var item in Model)
+                                    {
+                                        <div class="col l-2 m-3 c-6">
+
+
+                                            <a href="/sanpham/chitietsanphamview?id=@item.MaSanPham" class="noi_dung_sp">
+                                                <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/@item.AnhSanPham);"></div>
+                                                <div class="noi_dung_sp_container">
+                                                    <span class="noi_dung_sp_mota chu_san_pham">@item.TenSanPham</span>
+                                                    <div class="noi_dung_sp_the_giamgia">
+                                                        <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>7k</span>
+                                                        <div class="cham_tron dieu_chinh_cham_tron"></div>
+                                                        <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                                                        <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                                                        <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                                                        <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                                                        <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                                                    </div>
+                                                    <div class="noi_dung_sp_giaban">
+                                                        <span class="noi_dung_sp_giaban_gia chu_gia_sp">@item.GiaBan<span class="gach_chan">đ</span></span>
+                                                        <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 7</span>
+                                                    </div>
+                                                </div>
+                                                <div class="yeu_thich can_chinh_tp">
+                                                    <span class="chu_yeu_thich">Yêu thích</span>
+                                                </div>
+                                                <div class="nhan_giam_gia can_chinh_tp">
+                                                    <span class="nhan_giam_gia_phantram">10%</span>
+                                                    <span class="nhan_giam_gia_chu">GIẢM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <div id="di_den_noi_dung_cac_sp" class="noi_dung_cac_sp">
+                                        <div class="grid wide">
+                                            <div class="row">
+                                                <div class="col l-12 m-12 c-12">
+                                                    <h1 style="text-align: center;">Không có sản phẩm nào thuộc @ViewBag.searchText</h1>
+                                                    <h1 style="text-align: center;">Mời bạn tìm kiếm theo từ khóa khác</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="thong_so_ky_thuat_sp_danhmuc thong_so_ky_thuat_sp_danhmuc_mt">
+                        <span class="kich_thuoc_chu thong_so_ky_thuat_sp_tieude">CHKB Khánh Băng chân thành cảm ơn!</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="~/assets/css/sanpham.js"></script>
+

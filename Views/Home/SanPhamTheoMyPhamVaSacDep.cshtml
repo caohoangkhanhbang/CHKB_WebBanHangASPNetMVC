@@ -1,0 +1,47 @@
+﻿@model List<WebBanHangCuaKhanhBang.Models.SanPham>
+@{
+    ViewBag.Title = "SanPhamTheoMyPhamVaSacDep";
+    Layout = "~/Views/Shared/_LayoutPageKhanhBangShop.cshtml";
+}
+
+
+
+<div id="di_den_noi_dung_cac_sp" class="noi_dung_cac_sp">
+    <div class="grid wide">
+        <div class="row">
+                @foreach (var item in Model)
+                {
+            <div class="col l-2 m-3 c-6">
+
+            
+                <a href="sanPham.html" target="_blank" class="noi_dung_sp">
+                    <div class="noi_dung_sp_hinhAnh" style="background-image: url(/assets/img/san_pham/@item.AnhSanPham);"></div>
+                    <div class="noi_dung_sp_container">
+                        <span class="noi_dung_sp_mota chu_san_pham">@item.TenSanPham</span>
+                        <div class="noi_dung_sp_the_giamgia">
+                            <span class="noi_dung_sp_the_giamgia_noidung">Giảm <span class="gach_chan">đ</span>7k</span>
+                            <div class="cham_tron dieu_chinh_cham_tron"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron_p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron1p"></div>
+                            <div class="cham_tron dieu_chinh_cham_tron2p"></div>
+                        </div>
+                        <div class="noi_dung_sp_giaban">
+                            <span class="noi_dung_sp_giaban_gia chu_gia_sp">@item.GiaBan<span class="gach_chan">đ</span></span>
+                            <span class="noi_dung_sp_giaban_soluong chu_san_pham">Đã bán 7</span>
+                        </div>
+                    </div>
+                    <div class="yeu_thich can_chinh_tp">
+                        <span class="chu_yeu_thich">Yêu thích</span>
+                    </div>
+                    <div class="nhan_giam_gia can_chinh_tp">
+                        <span class="nhan_giam_gia_phantram">10%</span>
+                        <span class="nhan_giam_gia_chu">GIẢM</span>
+                    </div>
+                </a>
+            </div>
+                }
+        </div>
+    </div>
+</div>

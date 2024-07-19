@@ -1,0 +1,236 @@
+﻿@model IEnumerable<WebBanHangCuaKhanhBang.Models.SanPham>
+
+@{
+    ViewBag.Title = "Sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 1604.44px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý sản phẩm</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Sản phẩm</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Danh sách sản phẩm</h3>
+
+                <div class="card-tools">
+                    <a href="/admin/sanpham/themsanpham" class="btn btn-primary">Thêm</a>
+                    <a href="#" class="btn btn-danger " id="btnDeleteAll">Xóa tất cả</a>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body" style="display: block;">
+                <div class="row">
+                    <div class="col-6">
+                        @using (Html.BeginForm("sanphamview", "sanpham", FormMethod.Get, new { }))
+                        {
+                            <div class="input-group input-group-sm" style="margin-bottom: 16px;">
+                                @*@Html.TextBox("SearchText",new {@class="form-control", @values = ViewBag.searchText })*@
+                                <input type="text" class="form-control" name="SearchText" value="@ViewBag.searchText" placeholder="Mời nhập từ khóa"/>
+                                <span class="input-group-append">
+                                    <button type="submit" class="btn btn-info btn-flat">Tìm kiếm</button>
+                                </span>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            <input type="checkbox" name="" value="" id="selectAll" />
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TenSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NgaySanXuat)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.NgayHetHan)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.HanSuDung)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.ThanhPhan)
+                        </th>*@
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.LuuY)
+                        </th>*@
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.MoTa)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.XuaXu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GiaGoc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GiaBan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AnhSanPham)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.ChucNang.TenChucNang)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LoaiSanPham.TenLoai)
+                        </th>*@
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="name" value="@item.MaSanPham" class="chkItem" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenSanPham)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgaySanXuat)
+                            </td>
+                            @*<td>
+            @Html.DisplayFor(modelItem => item.NgayHetHan)
+        </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HanSuDung)
+                            </td>
+                            @*<td>
+            @Html.DisplayFor(modelItem => item.ThanhPhan)
+        </td>*@
+                            @*<td>
+            @Html.DisplayFor(modelItem => item.LuuY)
+        </td>*@
+                            @*<td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.XuaXu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GiaGoc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GiaBan)
+                            </td>
+                            <td>
+                                <img src="~/assets/img/san_pham/@item.AnhSanPham" alt="Alternate Text" width="70px" />
+                                @*@Html.DisplayFor(modelItem => item.AnhSanPham)*@
+                            </td>
+                            @*<td>
+            @Html.DisplayFor(modelItem => item.ChucNang.TenChucNang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiSanPham.TenLoai)
+        </td>*@
+                            <td>
+                                <a href="/admin/sanpham/capNhatSanPham?MaSanPham=@item.MaSanPham" class="btn btn-sm btn-primary">Cập nhật</a>
+                                <a href="/admin/sanpham/xoaSanPham?MaSanPham=@item.MaSanPham" data-id="@item.MaSanPham" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                            </td>
+
+                        </tr>
+                    }
+                </table>
+
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer" style="display: block;">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('body').on("click", "#btnDeleteAll", function (e) {
+                e.preventDefault();
+                var str = "";
+                var checkBoxs = $(this).parents(".card").find("tr td input:checkbox");
+                var i = 0;
+                checkBoxs.each(function () {
+                    if (this.checked) {
+                        checkBoxs.attr("selected", "checked");
+                        var _id = $(this).val();
+                        if (i == 0) {
+                            str += _id;
+                        }
+                        else {
+                            str += "," + _id;
+                        }
+                        i++;
+                    }
+                    else {
+                        checkBoxs.attr("selected", "");
+
+                    }
+                });
+                if (str.length > 0) {
+                    var conf = confirm("Bạn có chắc muốn xóa tất cả không");
+                    if (conf === true) {
+                        $.ajax({
+                            url: "/admin/sanpham/xoatatcasanpham",
+                            type: "POST",
+                            data: { maSanPham: str },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    location.reload();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+
+            //chọn tất cả
+            $("body").on("change", "#selectAll", function () {
+                var checkStatus = this.checked;
+                var checkBox = $(this).parents('.card-body').find('tr td input:checkbox');
+                checkBox.each(function () {
+                    this.checked = checkStatus;
+                    if (this.checked) {
+                        checkBox.attr("selected", "checked");
+                    }
+                    else {
+                        checkBox.attr("selected", "");
+                    }
+                });
+            });
+        });
+    </script>
+    }

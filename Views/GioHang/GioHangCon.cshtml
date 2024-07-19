@@ -1,0 +1,53 @@
+﻿@*@model List<WebBanHangCuaKhanhBang.Models.GioHangClass>*@
+@model List<WebBanHangCuaKhanhBang.Models.GioHang>
+@*<div class="thong_tin_sp">*@
+<link rel="stylesheet" href="~/assets/css/giohang.css">
+
+<h4 class="kich_thuoc_chu header_sp">Sản phẩm đã thêm</h4>
+<ul class="san_pham_cu_the">
+    @if (ViewBag.rong != 0)
+    {
+        foreach (var item in Model)
+        {
+
+            //Dành cho Session
+            @*<li class="San_pham_pt" style="display: flex;">
+                    <a href="/sanpham/chitietsanphamview?id=@item.gMaSanPham" class="den_sp">
+                        <img class="hinh_sp" src="/assets/img/san_pham/@item.gAnhSanPham" alt="@item.gAnhSanPham">
+                        <div class="thong_tin_chi_tiet">
+                            <div class="mo_ta">
+                                <span class="mo_ta_sp mau_chu kich_thuoc_chu chu_dam">@item.gTenSanPham</span>
+                                <span class="gia_sp kich_thuoc_chu chu_dam">@item.gDonGia<span class="so_luong_sp kich_thuoc_chu mau_chu"> x @item.gSoLuong</span></span>
+                            </div>
+                            <div class="phan_loai">
+                                <span class="phan_loai_sp kich_thuoc_chu mau_chu">Phân loại: </span>
+                                <a href="/giohang/xoaGioHang?id=@item.gMaSanPham" class="phan_loai_sp_xoa kich_thuoc_chu mau_chu chu_dam">Xóa</a>
+                            </div>
+                        </div>
+                    </a>
+                </li>*@
+
+            <li class="San_pham_pt" style="display: flex;">
+                    <a href="/sanpham/chitietsanphamview?id=@item.MaSanPham" class="den_sp">
+                        <img class="hinh_sp" src="/assets/img/san_pham/@item.AnhSanPham" alt="@item.AnhSanPham">
+                        <div class="thong_tin_chi_tiet">
+                            <div class="mo_ta">
+                                <span class="mo_ta_sp mau_chu kich_thuoc_chu chu_dam">@item.TenSanPham</span>
+                                <span class="gia_sp kich_thuoc_chu chu_dam">@item.DonGia<span class="so_luong_sp kich_thuoc_chu mau_chu"> x @item.SoLuong</span></span>
+                            </div>
+                            <div class="phan_loai">
+                                <span class="phan_loai_sp kich_thuoc_chu mau_chu">Phân loại: </span>
+                                <a href="/giohang/xoaGioHang?id=@item.MaSanPham" class="phan_loai_sp_xoa kich_thuoc_chu mau_chu chu_dam">Xóa</a>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+        }
+    }
+    else
+    {
+        <li style="text-align: center;" class="San_pham_pt">Giỏ hàng trống</li>
+    }
+</ul>
+@*</div>*@

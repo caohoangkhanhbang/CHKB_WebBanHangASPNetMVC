@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/assets/img/logo_thuonghieu/bat_chanh_dao_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="~/assets/css/base.css">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/css/script.js">
+    <link rel="stylesheet" href="~/assets/css/sanpham.css">
+
+    <link rel="stylesheet" href="~/assets/css/respon_dangnhap.css">
+    <link rel="stylesheet" href="~/assets/css/responsive_base.css">
+
+  
+    @*Đăng nhập*@
+    <link rel="stylesheet" href="~/assets/css/dangnhap.css">
+
+    <style>
+        .hopSoLuongGioHang {
+            border-radius: 15px;
+            height: 22px;
+            border: 1px solid;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="khanhBang_shop">
+        <div class="caoHoang">
+            <div class="grid dau_trang">
+                <div class="row">
+                    <div class="grid wide col l-12 header_top an_header">
+                        <ul class="danhsach_trai">
+                            <li class="danhsach_pt">
+                                <a class="mau_chu_danh_sach" target="_blank" href="https://www.niemphat.vn/cuoc-doi-duc-phat-thich-ca">Tiết kiệm hơn với ứng dụng</a>
+                            </li>
+                            <li class="danhsach_pt">
+                                <a class="mau_chu_danh_sach" target="_blank" href="http://www.trungtamhotong.org/NoiDung/ThuVien/PDF/NenTangPhatGiao/Quyen10Phaphanhthientue.pdf">Chăm sóc khách hàng</a>
+                            </li>
+                            <li class="danhsach_pt_dauso">
+                                <a class="mau_chu_danh_sach" target="_blank" href="https://chat.zalo.me/">Kết nối</a>
+                                <a class="mau_chu_danh_sach" target="_blank" href="https://www.facebook.com/index.php" target="_blank">
+                                    <i class="icon_ketnoi fa-brands fa-square-facebook"></i>
+                                </a>
+                                @*<a class="mau_chu_danh_sach" target="_blank" href="https://www.tiktok.com/@_caohoangkhanhbang_">
+                                        <i class="icon_ketnoi fa-brands fa-tiktok"></i>
+                                    </a>*@
+
+                            </li>
+                        </ul>
+                        <ul class="danhsach_trai">
+                            <li class="danhsach_pt">
+                                <a target="_blank" class="mau_chu_danh_sach" href="https://phatgiao.org.vn/y-nghia-sau-sac-cua-giao-phap-tu-dieu-de-tu-thanh-de-d35558.html" target="_blank">
+                                    <i class="fa-regular fa-bell"></i>
+                                    Thông báo
+                                </a>
+                            </li>
+                            <li class="danhsach_pt">
+                                <a target="_blank" class="mau_chu_danh_sach" href="https://thuvienhoasen.org/a12600/bat-chanh-dao">
+                                    <i class="fa-sharp fa-regular fa-circle-question"></i>
+                                    Hỗ trợ
+                                </a>
+                            </li>
+                            <li class="danhsach_pt">
+                                <a class="mau_chu_danh_sach" href="/account/DangKyTaiKhoan">Đăng ký</a>
+                            </li>
+                            <li class="danhsach_pt">
+                                <a class="mau_chu_danh_sach" href="/account/DangNhapTaiKhoan">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                    Đăng nhập
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="grid wide l-12 header_bottom">
+                        <a href="/home/index" class="logo_thuonghieu">
+                            <div class="logo_nhanhieu" style="background-image: url(/assets/img/logo_thuonghieu/chkb_logo_trang.png);">
+
+                            </div>
+                        </a>
+                        @*Tìm kiếm thanh*@
+                        <form class="search" action="/home/sanpham" method="post">
+                            <div >
+                                    <input style="height: 43px;" name="SearchText" class="seach_input" type="text" placeholder="Đăng ký cửa hàng Khánh Băng để nhận ưu đãi" value="@ViewBag.SearchText">
+                                    <button style="border: 0;" type="submit" class="search__icon can_chinh_tp">
+                                        <i class="search_icon_css fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                            </div>
+                        </form>
+
+                        @*giỏ hàng nhỏ*@
+                        <div class="giohang can_chinh_tp">
+                            <div class="container_sp">
+                                <a href="/giohang/giohang" class="giohang_icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span class="giohang_icon_sl">
+                                        @Html.Action("gioHangPartial", "giohang")
+                                    </span>
+                                </a>
+                                <div class="thong_tin_sp">
+                                    @Html.Action("GioHangCon", "giohang")
+                                </div>
+                                    @*<div class="thong_tin_sp">
+                <h4 class="kich_thuoc_chu header_sp">Sản phẩm đã thêm</h4>
+                <ul class="san_pham_cu_the">
+                    <li class="San_pham_pt">
+                        <a href="giohang.html" class="den_sp">
+                            <img class="hinh_sp" src="/assets/img/duong-xua-may-trang-theo-got-chan-but.jpg" alt="sách đường xưa mây trắng">
+                            <div class="thong_tin_chi_tiet">
+                                <div class="mo_ta">
+                                    <span class="mo_ta_sp mau_chu kich_thuoc_chu chu_dam">Sách đường xưa mây trắng - Theo gót chân Bụt</span>
+                                    <span class="gia_sp kich_thuoc_chu chu_dam">220.000đ<span class="so_luong_sp kich_thuoc_chu mau_chu"> x 1</span></span>
+                                </div>
+                                <div class="phan_loai">
+                                    <span class="phan_loai_sp kich_thuoc_chu mau_chu">Phân loại: Sách</span>
+                                    <span class="phan_loai_sp_xoa kich_thuoc_chu mau_chu chu_dam">Xóa</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="San_pham_pt">
+                        <a href="giohang.html" class="den_sp">
+                            <img class="hinh_sp" src="/assets/img/Khong-Diet-Khong-Sinh-Dung-So-Hai.jpg" alt="sách đường xưa mây trắng">
+                            <div class="thong_tin_chi_tiet">
+                                <div class="mo_ta">
+                                    <span class="mo_ta_sp mau_chu kich_thuoc_chu chu_dam">Không diệt không sinh đừng sợ hãi</span>
+                                    <span class="gia_sp kich_thuoc_chu chu_dam">88.000đ<span class="so_luong_sp kich_thuoc_chu mau_chu"> x 1</span></span>
+                                </div>
+                                <div class="phan_loai">
+                                    <span class="phan_loai_sp kich_thuoc_chu mau_chu">Phân loại: Sách</span>
+                                    <span class="phan_loai_sp_xoa kich_thuoc_chu mau_chu chu_dam">Xóa</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="San_pham_pt">
+                        <a href="giohang.html" class="den_sp">
+                            <img class="hinh_sp" src="/assets/img/san_pham/sach11.jfif" alt="sách đường xưa mây trắng">
+                            <div class="thong_tin_chi_tiet">
+                                <div class="mo_ta">
+                                    <span class="mo_ta_sp mau_chu kich_thuoc_chu chu_dam">Sách See Inside Oceans - Khám phá đại dương</span>
+                                    <span class="gia_sp kich_thuoc_chu chu_dam">252.000đ<span class="so_luong_sp kich_thuoc_chu mau_chu"> x 1</span></span>
+                                </div>
+                                <div class="phan_loai">
+                                    <span class="phan_loai_sp kich_thuoc_chu mau_chu">Phân loại: Sách</span>
+                                    <span class="phan_loai_sp_xoa kich_thuoc_chu mau_chu chu_dam">Xóa</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>*@
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phần thân -->
+            <div class="grid wide slide_dau_trang">
+            </div>
+            <div>
+                @RenderBody()
+            </div>
+
+
+            <!-- Chân trang -->
+            <div class="chan_trang_footer">
+                <div class="grid wide">
+                    <div class="row ">
+                        <div class="col l-2-4 m-6 c-12 re_can_deu_tp_chantrang">
+                            <div class="chan_trang_mota">
+                                <h5 class="chan_trang_mota_header kich_thuoc_chu">CHĂM SÓC KHÁCH HÀNG</h5>
+                                <ul class="chan_trang_mota_list kich_thuoc_chu">
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Trung Tâm Trợ Giúp</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">CHKB Blog</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">CHKB Mall</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Hướng Dẫn Mua Hàng</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Hướng Dẫn Bán Hàng</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Thanh Toán</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">CHKB Khánh Băng Xu</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Vận Chuyển</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Trả Hàng & Hoàn Tiền</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Chăm Sóc Khách Hàng</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Chính Sách Bảo Hành</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col l-2-4 m-6 c-12 re_can_deu_tp_chantrang">
+                            <div class="chan_trang_mota">
+                                <h5 class="chan_trang_mota_header kich_thuoc_chu">VỀ CỬA HÀNG KHÁNH BĂNG</h5>
+                                <ul class="chan_trang_mota_list kich_thuoc_chu">
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Giới Thiệu Về CHKB Việt Nam</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Tuyển Dụng</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Điều Khoản CHKB</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Chính Sách Bảo Mật</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Chính Hãng</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Kênh Người Bán</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Flash Sales</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Chương Trình Tiếp Thị Liên Kết CHKB</a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="#" class="chan_trang_chu_mota">Liên Hệ Với Truyền Thông</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col l-2-4 m-6 c-12 re_can_deu_tp_chantrang">
+                            <div class="van_chuyen">
+                                <h5 class="chan_trang_mota_header kich_thuoc_chu">THANH TOÁN</h5>
+                                <div class="row">
+                                    <div class="col l-4 van_chuyen_dem">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/visa1.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/tt2.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/jcb3.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/ae4.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/cop5.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/tragop6.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/spay7.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/spay_later8.png);"></div>
+                                    </div>
+                                </div>
+
+                                <h5 class="chan_trang_mota_header chan_trang_mota_header_REST kich_thuoc_chu">ĐƠN VỊ VẬN CHUYỂN</h5>
+                                <div class="row">
+                                    <div class="col l-4 van_chuyen_dem">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_express1.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc2.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_ghn3.jfif);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_viettel4.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_vietnampost5.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_j&t6.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_grapexpress7.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_ninjavan8.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_bestexpress9.png);"></div>
+                                    </div>
+                                    <div class="col l-4">
+                                        <div class="van_chuyen_pt" style="background-image: url(/assets/img/thanh_toan/vc_be10.png);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col l-2-4 m-6 c-12 re_can_deu_tp_chantrang">
+                            <div class="chan_trang_mota">
+                                <h5 class="chan_trang_mota_header kich_thuoc_chu">THEO DÕI CHÚNG TÔI TRÊN</h5>
+                                <ul class="chan_trang_mota_list kich_thuoc_chu">
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="https://www.facebook.com/index.php" class="chan_trang_chu_mota" target="_blank">
+                                            <i class="fa-brands fa-facebook chan_trang_mota_list_tp_icon"></i>
+                                            Facebook
+                                        </a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        <a href="https://chat.zalo.me/" class="can_chinh_zalo" target="_blank">
+                                            <div class="zalo_icon" style="background-image: url(/assets/img/zalo_lienlac.png);"></div>
+                                            <span class="chan_trang_chu_mota">Zalo</span>
+                                        </a>
+                                    </li>
+                                    <li class="chan_trang_mota_list_tp kich_thuoc_chu">
+                                        @*<a href="https://www.tiktok.com/@_caohoangkhanhbang_" class="chan_trang_chu_mota" target="_blank">
+                                                <i class="fa-brands fa-tiktok chan_trang_mota_list_tp_icon"></i>
+                                                Tik tok
+                                            </a>*@
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col l-2-4 m-6 c-12 re_can_deu_tp_chantrang">
+                            <div class="chan_trang_mota">
+                                <h5 class="chan_trang_mota_header kich_thuoc_chu">TẢI APP KHÁNH BĂNG NGAY</h5>
+                                <div class="row re_can_deu_tp_chantrang">
+                                    <div class="col l-6 c-6 re_can_deu_tp_chantrang">
+                                        <a href="https://thuvienhoasen.org/a209/kinh-truong-bo-digha-nikaya" target="_blank"><div class="ma_QR" style="background-image: url(/assets/img/qrcode_thuvienhoasen.org.png);"></div></a>
+                                    </div>
+                                    <div class="col l-6 c-6">
+                                        <div class="trinh_tai_app">
+                                            <div class="row re_can_deu_tp_chantrang">
+                                                <div class="col l-12 c-12 m-12">
+                                                    <a href="https://www.apple.com/app-store/" target="_blank"><div class="trinh_tai_app_pt anh_the_div" style="background-image: url(/assets/img/appstore.png);"></div></a>
+                                                </div>
+                                                <div class="col l-12 c-12 m-12">
+                                                    <a href="https://play.google.com/store/games?utm_source=apac_med&hl=vi&utm_medium=hasem&utm_content=Oct0121&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1003227-Med-hasem-py-Evergreen-Oct0121-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700064211720896_creativeid_525822890336_device_c&gclid=CjwKCAjw9J2iBhBPEiwAErwpeRwhwprMiox0GYuF17OtO6Zj3A_ZIW-vYzmqnO9u_fiJoHz8vOT9uBoCJRoQAvD_BwE&gclsrc=aw.ds&pli=1" target="_blank"><div class="trinh_tai_app_pt anh_the_div" style="background-image: url(/assets/img/googleplay.png);"></div></a>
+                                                </div>
+                                                <div class="col l-12 c-12 m-12">
+                                                    <a href="https://appgallery.huawei.com/Featured" target="_blank"><div class="trinh_tai_app_pt anh_the_div" style="background-image: url(/assets/img/appgallery.png);"></div></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row can_chinh_tp duong_ke_ngang_bangquyen re_dem_trai_phai_tp">
+                            <div class="col l-4 c-12">
+                                <div class="ban_quyen_chan_trang kich_thuoc_chu chan_trang_chu_mota">&copy; 2023 CHKB Khánh Băng. Tất cả các quyền được bảo lưu.</div>
+                            </div>
+
+                            <div class="col l-8 c-12">
+                                <div class="quoc_gia_khu_vuc_chan_trang">
+                                    <ul class="quoc_gia_khu_vuc_chan_trang_list">
+                                        <li class="quoc_gia_list_item kich_thuoc_chu chan_trang_chu_mota">Quốc gia & khu vực:</li>
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Singapore</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Indonesia</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Đài Loan</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Thái Lan</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Malaysia</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Việt Nam</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Philippines</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Brazil</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">México</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Colombia</a>
+                                        </li>
+
+                                        <li class="quoc_gia_list_item">
+                                            <a href="#" class="quoc_gia_khu_vuc_tp kich_thuoc_chu chan_trang_chu_mota">Chile</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- chân trang địa chỉ -->
+            <div class="chan_trang_dia_chi">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12">
+                            <ul class="chan_trang_dia_chi_chinsach">
+                                <li class="chan_trang_dia_chi_chinh_sach_item">
+                                    <a href="" class="chan_trang_dia_chi_chinh_sach_tp chan_trang_chu_mota kich_thuoc_chu">CHÍNH SÁCH BẢO MẬT</a>
+                                </li>
+
+                                <li class="chan_trang_dia_chi_chinh_sach_item">
+                                    <a href="" class="chan_trang_dia_chi_chinh_sach_tp chan_trang_chu_mota kich_thuoc_chu">QUY CHẾ HOẠT ĐỘNG</a>
+                                </li>
+
+                                <li class="chan_trang_dia_chi_chinh_sach_item">
+                                    <a href="" class="chan_trang_dia_chi_chinh_sach_tp chan_trang_chu_mota kich_thuoc_chu">CHÍNH SÁCH VẬN CHUYỂN</a>
+                                </li>
+
+                                <li class="chan_trang_dia_chi_chinh_sach_item">
+                                    <a href="" class="chan_trang_dia_chi_chinh_sach_tp chan_trang_chu_mota kich_thuoc_chu">CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col l-12 c-12">
+                            <div class="chan_trang_dia_chi_logo can_chinh_tp">
+                                <div class="hinh_logo_chan_trang" style="background-image: url(/assets/img/chan_trang_dang_ky/logo_da_dang_ky.png);"></div>
+                                <div class="hinh_logo_chan_trang" style="background-image: url(/assets/img/chan_trang_dang_ky/logo_da_dang_ky.png);"></div>
+                                <div class="hinh_logo_chan_trang" style="background-image: url(/assets/img/chan_trang_dang_ky/noi-khong-voi-hang-gia-400x400.png);"></div>
+                            </div>
+                        </div>
+
+                        <div class="col l-12 c-12">
+                            <div class="chan_trang_ten_congty chan_trang_chu_mota can_chinh_tp">Công ty TNHH CHKB Khánh Băng</div>
+                        </div>
+
+                        <div class="col l-12">
+                            <div class="can_chinh_chan_trang_diachi can_chinh_tp">
+                                <div class="chan_trang_dia_chi_congty">Địa chỉ: tầng trệt, tòa nhà Cao Hoàng, đường Nguyễn Trãi, cầu Kênh Chiến Đấu, ấp Thủy Thuận, xã An Phước, huyện Mang Thít, tỉnh Vĩnh Long. Tại thành phố Hồ Chí Minh, tầng 1 tòa nhà 95 Phạm Văn Hai, phường 3, quận Tân Bình. Tổng đài hỗ trợ: 0582370529 - Email: caohoangkhanhbang2003@gmail.com</div>
+                                <div class="chan_trang_dia_chi_congty">Chịu Trách Nhiệm Quản Lý Nội Dung: Cao Hoàng Khánh Băng - Điện thoại liên hệ: 058 2370529</div>
+                                <div class="chan_trang_dia_chi_congty">Mã số doanh nghiệp: CHKB010623 do Sở Kế hoạch & Đầu tư TP Hồ Chí Minh cấp lần đầu ngày 27/04/2023</div>
+                                <div class="chan_trang_dia_chi_congty">&copy; 2023 - Bản quyền thuộc về Công ty TNHH CHKB Khánh Băng</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+

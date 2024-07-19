@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutPageKhanhBangShop.cshtml";
+}
+
+<!-- slide chuyển cảnh -->
+<div class="grid wide @*slide_dau_trang*@">
+    <div class="row">
+        <div class="col l-12 m-12 c-12">
+            <div class="slide">
+                <img src="~/assets/img/thoiTangNam.png" alt="" id="hinh">
+                <b id="mota an_header"></b>
+                <i class="fa-solid fa-circle-chevron-left cham_btn" onclick="prev()"></i>
+                <i class="fa-solid fa-circle-chevron-right cham_btn" onclick="next()"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        @Html.Action("UuDaiPartial","UuDai")
+    </div>
+</div>
+<!-- DANH MỤC -->
+<div class="danh_muc">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 m-12 c-12">
+                <div class="header_danh_muc">
+                    <span class="chu_header_danh_muc">DANH MỤC</span>
+                </div>
+            </div>
+            @Html.Action("DanhMucPartial","DanhMuc")
+        </div>
+    </div>
+</div>
+
+<!-- Containt Nội dung -->
+<div id="di_den_noi_dung_cac_sp" class="noi_dung_cac_sp">
+    <div class="grid wide">
+        <div class="row">
+            @Html.Action("Myphampartial")
+            @Html.Action("SachPartial")
+            @Html.Action("thoitrangnamPartial")
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/css/script.js"></script>
